@@ -1,4 +1,5 @@
 from flask import Flask, render_template, abort
+import os
 import json
 app = Flask(__name__)
 
@@ -16,4 +17,5 @@ def libro(isbn):
             return render_template("libro.html",libro=detalles)
     abort(404)
 
-app.run('0.0.0.0', debug=True)
+port=os.environ["PORT"]
+app.run('0.0.0.0',int(port), debug=True)
