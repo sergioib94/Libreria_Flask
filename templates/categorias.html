@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{categoria}}</title>
+    </head>
+    <body>
+        <h2>{{categoria}}</h2>
+        <ul>
+            {% for cat in libros %}
+                {% if categoria in cat.categories %}
+                    {% if cat.isbn %}
+                        <li><a href="/libro/{{cat.isbn}}">{{cat.title}}</a></li>
+                    {% endif %}
+                    <br>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <a href="/">Inicio</a>
+    </body>
+</html>

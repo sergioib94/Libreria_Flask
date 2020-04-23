@@ -17,5 +17,12 @@ def libro(isbn):
             return render_template("libro.html",libro=detalles)
     abort(404)
 
+@app.route('/categoria/<categoria>')
+def categoria(categoria):
+    for cat in datos:
+        if "categories" in cat.keys() and categoria in cat["categories"]:
+            return render_template("categorias.html",libros=datos, categoria=categoria)
+    abort(404)
+
 port=os.environ["PORT"]
-app.run('0.0.0.0',int(port), debug=True)
+app.run('0.0.0.0',int(port), debug=False)

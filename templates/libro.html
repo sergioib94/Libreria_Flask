@@ -26,6 +26,14 @@
                 </ul>
             {% endfor %}
         {% endif %}
+        {% if libro.categories %}
+        <p><strong>Categorías:</strong></p>
+            {% for cat in libro.categories %}
+                <ul>
+                    <li><a href="/categoria/{{cat}}">{{cat}}</a></li>
+                </ul>
+            {% endfor %}
+        {% endif %}
         <a href="/">Inicio</a>
     </body>
 </html>
