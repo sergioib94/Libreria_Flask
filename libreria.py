@@ -21,7 +21,7 @@ def libro(isbn):
 def categoria(categoria):
     for cat in datos:
         if "categories" in cat.keys() and categoria in cat["categories"]:
-            return render_template("error.html",libros=datos, categoria=categoria)
+            return render_template("categorias.html",libros=datos, categoria=categoria)
     abort(404)
 
 port=os.environ["PORT"]
